@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magefly_Wallmur extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Magefly
+ * @package        Magefly_Wallmur
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Magefly_Wallmur>
+            <version>1.0.0</version>
+        </Magefly_Wallmur>
+    </modules>
+    <global>
+        <resources>
+            <magefly_wallmur_setup>
+                <setup>
+                    <module>Magefly_Wallmur</module>
+                    <class>Magefly_Wallmur_Model_Resource_Setup</class>
+                </setup>
+            </magefly_wallmur_setup>
+        </resources>
+        <blocks>
+            <magefly_wallmur>
+                <class>Magefly_Wallmur_Block</class>
+            </magefly_wallmur>
+        </blocks>
+        <helpers>
+            <magefly_wallmur>
+                <class>Magefly_Wallmur_Helper</class>
+            </magefly_wallmur>
+        </helpers>
+        <models>
+            <magefly_wallmur>
+                <class>Magefly_Wallmur_Model</class>
+                <resourceModel>magefly_wallmur_resource</resourceModel>
+            </magefly_wallmur>
+            <magefly_wallmur_resource>
+                <class>Magefly_Wallmur_Model_Resource</class>
+                <entities>
+                    <canvas>
+                        <table>magefly_wallmur_canvas</table>
+                    </canvas>
+                    <canvas_store>
+                        <table>magefly_wallmur_canvas_store</table>
+                    </canvas_store>
+                </entities>
+            </magefly_wallmur_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magefly_wallmur>
+                    <file>magefly_wallmur.xml</file>
+                </magefly_wallmur>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magefly_Wallmur>
+                    <files>
+                        <default>Magefly_Wallmur.csv</default>
+                    </files>
+                </Magefly_Wallmur>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magefly_Wallmur before="Mage_Adminhtml">Magefly_Wallmur_Adminhtml</Magefly_Wallmur>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magefly_Wallmur extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Magefly
+ * @package        Magefly_Wallmur
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magefly_wallmur translate="title" module="magefly_wallmur">
+                                        <title>Wallmur</title>
+                                    </magefly_wallmur>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <magefly_wallmur translate="title" module="magefly_wallmur">
+                        <title>Wallmur</title>
+                        <children>
+                            <canvas translate="title" module="magefly_wallmur">
+                                <title>Canvas</title>
+                                <sort_order>0</sort_order>
+                            </canvas>
+                        </children>
+                    </magefly_wallmur>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <magefly_wallmur translate="title" module="magefly_wallmur">
+            <title>Wallmur</title>
+            <sort_order>82</sort_order>
+            <children>
+                <canvas translate="title" module="magefly_wallmur">
+                    <title>Canvas</title>
+                    <action>adminhtml/wallmur_canvas</action>
+                    <sort_order>0</sort_order>
+                </canvas>
+            </children>
+        </magefly_wallmur>
+    </menu>
+</config>

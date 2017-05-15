@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magefly_Wallmur extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Magefly
+ * @package        Magefly_Wallmur
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_wallmur_canvas_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>magefly_wallmur/canvas</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="magefly_wallmur/adminhtml_canvas" name="canvas" />
+
+        </reference>
+    </adminhtml_wallmur_canvas_index>
+    <adminhtml_wallmur_canvas_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="magefly_wallmur/adminhtml_canvas_grid" name="canvas_grid"/>
+        </block>
+    </adminhtml_wallmur_canvas_grid>
+    <!-- Canvas add/edit action -->
+    <adminhtml_wallmur_canvas_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>magefly_wallmur/canvas</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="magefly_wallmur/adminhtml_canvas_edit" name="canvas_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="magefly_wallmur/adminhtml_canvas_edit_tabs" name="canvas_tabs"></block>
+        </reference>
+    </adminhtml_wallmur_canvas_edit>
+
+</layout>
